@@ -4,7 +4,7 @@
   "description": "An API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "pm2 start server.js"
   },
   "keywords": [],
   "author": "Leon-Arno",
@@ -14,6 +14,7 @@
     "koa": "^2.7.0",
     "koa-graphql": "^0.8.0",
     "koa-mount": "^4.0.0",
-    "mongoose": "^5.4.14"
+    "mongoose": "^5.4.14",
+    "pm2": "^3.3.1"
   }
 }
