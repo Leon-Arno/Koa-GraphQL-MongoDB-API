@@ -1,8 +1,20 @@
-const { buildSchema } = require('graphql');
+const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql');
+const techGraphQLType = require('./techType');
+const Tech = require('../models/tech');
 
-const schema = buildSchema(`
-type Query{
-  hello: String
-}`);
+const RootQuery = new GraphQLObjectType({
+  name: 'RootQueryType',
+  fields: {
+    tech: {
+      type: techGraphQLType,
+      args: { id: { type: GraphQLString } },
+      resolve(parent, args) {
+        return Tech.findById(args.id);
+      }
+    }
+  }
+});
 
-module.exports = schema;
+module.exports = new GraphQLSchema({
+  query: RootQuery
+});
