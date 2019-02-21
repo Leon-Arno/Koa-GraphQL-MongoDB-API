@@ -5,8 +5,6 @@ const graphqlHTTP = require('koa-graphql');
 const schema = require('./graphql/schema');
 const initializeDB = require('./db/database');
 
-initializeDB();
-
 const app = new Koa();
 
 app.listen(9000);
@@ -24,3 +22,5 @@ app.use(
 app.on('error', err => {
   log.error('server error', err);
 });
+
+initializeDB();
