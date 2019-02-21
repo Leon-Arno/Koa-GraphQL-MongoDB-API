@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const TechSchema = new Schema({
+const GadgetSchema = new Schema({
   name: String,
   release_date: Date,
   by_company: String,
-  open_source: String
+  price: Number
 });
 
-module.exports = mongoose.model('Tech', TechSchema);
+module.exports = mongoose.model('Gadget', GadgetSchema);

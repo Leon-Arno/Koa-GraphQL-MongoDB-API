@@ -2,14 +2,16 @@ const mongoose = require('mongoose');
 
 const initializeDB = () => {
   mongoose.connect(
-    'mongodb://admin:admin1234@ds117730.mlab.com:17730/sandbox',
+    'mongodb://user1:user12@ds147125.mlab.com:47125/koa-graphql',
     {
       useNewUrlParser: true
     }
   );
 
-  mongoose.connection.once('open', () => {
+  mongoose.connection.once('open', async () => {
     console.log('Connection to database established.');
+    const Gadget = require('../models/gadget');
+    console.log(await Gadget.find());
   });
 };
 
