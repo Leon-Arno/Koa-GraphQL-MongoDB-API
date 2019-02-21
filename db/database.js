@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const initializeDB = () => {
   mongoose.connect(
-    'mongodb://user1:user12@ds147125.mlab.com:47125/koa-graphql',
+    'mongodb://user1:user12@ds125263.mlab.com:25263/graphql-api',
     {
       useNewUrlParser: true
     }
