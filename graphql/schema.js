@@ -1,15 +1,15 @@
 const { GraphQLSchema, GraphQLObjectType, GraphQLString } = require('graphql');
-const gadgetGraphQLType = require('./gadgetType');
-const Gadget = require('../models/gadget');
+const techGraphQLType = require('./techType');
+const Technology = require('../models/tech');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
-    gadget: {
-      type: gadgetGraphQLType,
+    technology: {
+      type: techGraphQLType,
       args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Gadget.findById(args.id);
+        return Technology.findById(args.id);
       }
     }
   }

@@ -1,6 +1,6 @@
 {
-  "name": "Samsung Galaxy s10+",
-    "by_company": "Samsung",
-      "release_date": "March 8, 2019",
-        "price": "1200"
+  "name": "React",
+    "by_company": "Facebook",
+      "release_date": " March 2013",
+        "license": "MIT"
 }
