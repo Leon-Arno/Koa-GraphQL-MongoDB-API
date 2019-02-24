@@ -1,4 +1,4 @@
-#
+# An API setup with with Koa, GraphQL and MongoDB
 
 ![screenshot](./shot.png)
 
