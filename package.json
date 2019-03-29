@@ -10,11 +10,11 @@
   "author": "Leon-Arno",
   "license": "MIT",
   "dependencies": {
-    "graphql": "^14.1.1",
+    "graphql": "^14.2.0",
     "koa": "^2.7.0",
     "koa-graphql": "^0.8.0",
     "koa-mount": "^4.0.0",
-    "mongoose": "^5.4.19",
-    "pm2": "^3.4.0"
+    "mongoose": "^5.4.20",
+    "pm2": "^3.4.1"
   }
 }
