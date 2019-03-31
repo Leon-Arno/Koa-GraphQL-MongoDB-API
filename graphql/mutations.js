@@ -6,7 +6,13 @@ const Mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
     addTechnology: {
-      type: techGraphQLType
+      type: techGraphQLType,
+      args: {
+        name: { type: GraphQLString },
+        release_date: { type: GraphQLString },
+        by_company: { type: GraphQLString },
+        license: { type: GraphQLString }
+      }
     }
   }
 });
