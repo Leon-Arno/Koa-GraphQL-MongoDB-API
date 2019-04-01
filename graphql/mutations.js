@@ -13,8 +13,8 @@ const Mutation = new GraphQLObjectType({
         by_company: { type: GraphQLString },
         license: { type: GraphQLString }
       },
-      resolve(parent, args) {
-        const newTech = new Tech({
+      async resolve(parent, args) {
+        const newTech = await new Tech({
           name: args.name,
           release_date: args.release_date,
           by_company: args.by_company,
@@ -42,6 +42,25 @@ const Mutation = new GraphQLObjectType({
             (technology.license = args.license);
           const updatedTech = technology.save();
           return updatedTech;
+        } catch (error) {
+          throw error;
+        }
+      }
+    },
+    deleteTechnology: {
+      type: techGraphQLType,
+      args: {
+        id: { type: GraphQLString },
+        name: { type: GraphQLString },
+        release_date: { type: GraphQLString },
+        by_company: { type: GraphQLString },
+        license: { type: GraphQLString }
+      },
+      async resolve(parent, args) {
+        try {
+          const technology = await Tech.findOneAndDelete(args.id);
+          const deletedTech = technology.remove();
+          return deletedTech;
         } catch (error) {
           throw error;
         }
