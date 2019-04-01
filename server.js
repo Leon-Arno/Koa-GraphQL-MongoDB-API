@@ -6,8 +6,9 @@ const schema = require('./graphql/schema');
 const initializeDB = require('./db/database');
 
 const app = new Koa();
+const PORT = 9000;
 
-app.listen(9000);
+app.listen(PORT);
 
 app.use(
   mount(
