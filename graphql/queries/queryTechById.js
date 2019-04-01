@@ -1,5 +1,5 @@
 const { GraphQLString } = require('graphql');
-const techGraphQLType = require('../techType');
+const techGraphQLType = require('../types/techType');
 const Technology = require('../../models/tech');
 
 module.exports = {
