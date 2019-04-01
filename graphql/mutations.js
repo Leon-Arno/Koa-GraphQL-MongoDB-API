@@ -12,6 +12,16 @@ const Mutation = new GraphQLObjectType({
         release_date: { type: GraphQLString },
         by_company: { type: GraphQLString },
         license: { type: GraphQLString }
+      },
+      resolve(parent, args) {
+        const newTech = new Tech({
+          name: args.name,
+          release_date: args.release_date,
+          by_company: args.by_company,
+          license: args.license
+        });
+
+        return newTech.save();
       }
     }
   }
